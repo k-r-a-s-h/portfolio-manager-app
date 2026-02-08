@@ -1,6 +1,7 @@
 
 import type { GraphState } from "./state.js";
-import { HumanMessage, AIMessage } from "@langchain/core/messages";
+import { AIMessage } from "@langchain/core/messages";
+
 
 // Simple node that just echoes back a message for now
 // In a real app, this would use a LangChain runnable or model
