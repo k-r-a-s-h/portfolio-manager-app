@@ -4,14 +4,14 @@ import Logger from '../utils/logger.js';
 
 export const chatController = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { message } = req.body;
+        const { message, sessionId } = req.body;
 
         if (!message) {
             res.status(400).json({ error: 'Message is required' });
             return;
         }
 
-        const response = await processChatMessage(message);
+        const response = await processChatMessage(message, sessionId);
 
         res.json({ response });
     } catch (error) {
